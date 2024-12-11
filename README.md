@@ -29,9 +29,9 @@ This project implements a Single Cycle 32-bit RISC-V Processor in Verilog langua
 |                 |                                                                |                                                  |
 |  **srl**        |  rd ← (unsigned)[rs1] >> [rs2]                                 |  0000000	rs2	rs1	101	rd	0110011                 |
 |                 |                                                                |                                                  |
-|  **beq**        |  if [rs1] == [rs2] go to [PC]+{imm12:1,'0'}; else go to [PC]+4 |  imm[12|10:5]	rs2	rs1	000	imm[4:1|11]	1100011   | 
+|  **beq**        |  if [rs1] == [rs2] go to [PC]+{imm12:1,'0'}; else go to [PC]+4 |  imm[12\|10:5]	rs2	rs1	000	imm[4:1\|11]	1100011   | 
 |                 |                                                                |                                                  |
-|  **blt**        |  if [rs1] < [rs2] go to [PC]+{imm12:1,'0'}; else go to [PC]+4  |  imm[12|10:5]	rs2	rs1	100	imm[4:1|11]	1100011   |
+|  **blt**        |  if [rs1] < [rs2] go to [PC]+{imm12:1,'0'}; else go to [PC]+4  |  imm[12\|10:5]	rs2	rs1	100	imm[4:1\|11]	1100011   |
 |                 |                                                                |                                                  |
 |  **lw**         |  rd ← Memory[[rs1] + imm11:0]                                  |  imm[11:0]	rs1	010	rd	0000011                   |
 |                 |                                                                |                                                  |
@@ -39,7 +39,7 @@ This project implements a Single Cycle 32-bit RISC-V Processor in Verilog langua
 |                 |                                                                |                                                  |
 |  **lui**        |  rd ← {imm31:12,'0000 0000 0000'}                              |  imm[31:12]	rd	0110111                         |
 |                 |                                                                |                                                  |
-|  **jal**        |  rd ← [PC]+4; go to [PC] +{imm20:1,'0'}                        |  imm[20|10:1|11|19:12]	rd	1101111               |
+|  **jal**        |  rd ← [PC]+4; go to [PC] +{imm20:1,'0'}                        |  imm[20\|10:1\|11\|19:12]	rd	1101111               |
 |                 |                                                                |                                                  |
 |  **jalr**       |  rd ← [PC]+4; go to [rs1]+imm11:0                              |  imm[11:0]	rs1	000	rd	1100111                   |
 |                 |                                                                |                                                  |
