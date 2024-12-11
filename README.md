@@ -1,5 +1,5 @@
 # verilog-processor
-This project implements a Single Cycle 32-bit RISC-V Processor. The processor supports a set of RISC-V instructions, along a custom instruction, FLOOR_LOG, designed to compute the floor of the logarithm (base 2) of a register’s value.
+This project implements a Single Cycle 32-bit RISC-V Processor in Verilog language. The processor supports a set of RISC-V instructions, along a custom instruction, FLOOR_LOG, designed to compute the floor of the logarithm (base 2) of a register’s value.
 
 ## Features
 - 32-bit instruction set
@@ -29,11 +29,9 @@ This project implements a Single Cycle 32-bit RISC-V Processor. The processor su
 |                 |                                            |                                                  |
 |  **srl**        |  rd ← (unsigned)[rs1] >> [rs2];            |  0000000	rs2	rs1	101	rd	0110011                 |
 |                 |                                            |                                                  |
-|  **beq**        |  if [rs1] == [rs2] go to [PC]+             |  imm[12|10:5]	rs2	rs1	000	imm[4:1|11]	1100011   | 
-|                 |  {imm12:1,'0'}; else go to [PC]+4;         |                                                  | 
-|                 |                                            |                                                  |
-|  **blt**        |  if [rs1] < [rs2] go to [PC]+              |  imm[12|10:5]	rs2	rs1	100	imm[4:1|11]	1100011   |
-|                 |  {imm12:1,'0'}; else go to [PC]+4;         |                                                  |
+|  **beq**        |  if [rs1] == [rs2] go to [PC]+{imm12:1,'0'}; else go to [PC]+4 |  imm[12|10:5]	rs2	rs1	000	imm[4:1|11]	1100011   | 
+|                 |                                                                |                                                  |
+|  **blt**        |  if [rs1] < [rs2] go to [PC]+{imm12:1,'0'}; else go to [PC]+4; |  imm[12|10:5]	rs2	rs1	100	imm[4:1|11]	1100011   |
 |                 |                                            |                                                  |
 |  **lw**         |  rd ← Memory[[rs1] + imm11:0]              |  imm[11:0]	rs1	010	rd	0000011                   |
 |                 |                                            |                                                  |
