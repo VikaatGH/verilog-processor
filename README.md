@@ -16,7 +16,7 @@ This project implements a Single Cycle 32-bit RISC-V Processor. The processor su
 6. Immediate Decode Module, extracts and extends immediate values from instructions.
 
 ## Instruction Set Table
-|-----------------------------------------------------------------------------------------------------------------|
+
 |  Instruction    |  Operace                                   |  Encoding                                        |
 |-----------------|--------------------------------------------|--------------------------------------------------|
 |  **add**        |  rd ← [rs1] + [rs2];                       |  0000000	rs2	rs1	000	rd	0110011                 |
@@ -46,7 +46,6 @@ This project implements a Single Cycle 32-bit RISC-V Processor. The processor su
 |  **jalr**       |  rd ← [PC]+4; go to [rs1]+imm11:0;         |  imm[11:0]	rs1	000	rd	1100111                   |
 |                 |                                            |                                                  |
 |  **floor_log**  |  rd ← (int)floor(log2(rs1));	             |  000000000000	rs1	000	rd	0001011               |
-|-----------------------------------------------------------------------------------------------------------------|
 
 ## Floor_log
 The FLOOR_LOG instruction calculates the floor of the base-2 logarithm of a register value. It uses the exponent from the floating-point format, specifically subtracting 127 (the bias in IEEE 754 single-precision).
