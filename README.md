@@ -1,9 +1,9 @@
-# verilog-processor
-This project implements a Single Cycle 32-bit RISC-V Processor in Verilog language. The processor supports a set of RISC-V instructions, along a custom instruction, FLOOR_LOG, designed to compute the floor of the logarithm (base 2) of a register’s value.
+# Verilog-Processor
+This project implements a 32-bit single-cycle RISC-V processor using Verilog. The processor supports a standard subset of RISC-V instructions and includes a custom instruction, floor_log, which computes the floor of the base-2 logarithm of a register's value. To demonstrate the functionality of the processor and the custom instruction, the project also includes an Assembly language program that calculates the floor_log of each element in an array.
 
 ## Features
 - 32-bit instruction set
-- Support for RISC-V base instructions (I-type, R-type, S-type, B-type, U-type, and J-type)
+- Support for RISC-V base instructions (I-type, R-type, S-type, B-type, U-type, and J-type) and floor_log
 - Single-cycle execution
 - Memory-mapped I/O support for load/store operations
 
@@ -46,4 +46,7 @@ This project implements a Single Cycle 32-bit RISC-V Processor in Verilog langua
 |  **floor_log**  |  rd ← (int)floor(log2(rs1))                                    |  000000000000	rs1	000	rd	0001011               |
 
 ## Floor_log
-The FLOOR_LOG instruction calculates the floor of the base-2 logarithm of a register value. It uses the exponent from the floating-point format, specifically subtracting 127 (the bias in IEEE 754 single-precision).
+The floor_log instruction calculates the floor of the base-2 logarithm of a register value. It uses the exponent from the floating-point format, specifically subtracting 127 (the bias in IEEE 754 single-precision).
+
+## Program Description
+This program takes an array of floating-point numbers and calculates the floor of the base-2 logarithm (floor(log2(x))) for each number. The results are saved back in the same array. It follows RISC-V rules for function calls.
